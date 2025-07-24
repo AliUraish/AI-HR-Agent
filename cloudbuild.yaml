@@ -1,0 +1,13 @@
+steps:
+  - name: 'node:18'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        npm install
+        npm run build
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'cp', '-r', 'dist/*', 'gs://YOUR_BUCKET_NAME']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
