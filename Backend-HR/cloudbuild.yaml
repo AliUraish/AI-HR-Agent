@@ -31,6 +31,8 @@ steps:
       - '0'
       - '--max-instances'
       - '10'
+      - '--set-env-vars'
+      - 'NODE_ENV=production,FRONTEND_URL=https://hr-agent-frontend-1080649900100.me-central1.run.app'
 
 images:
   - 'me-central1-docker.pkg.dev/$PROJECT_ID/hr-agent/backend'
